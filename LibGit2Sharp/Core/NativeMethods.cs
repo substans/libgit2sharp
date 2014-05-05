@@ -79,12 +79,11 @@ namespace LibGit2Sharp.Core
         {
             get
             {
-                if (Environment.Is64BitProcess)
+                if (System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE") == "x86")
                 {
-                    return "amd64";
+                    return "x86";
                 }
-
-                return "x86";
+                return "amd64";
             }
         }
 
